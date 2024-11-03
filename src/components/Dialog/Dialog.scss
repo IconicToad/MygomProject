@@ -1,0 +1,99 @@
+@use "src/styles/Variables.scss" as themeColors;
+
+.dialog {
+  background: themeColors.$white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px themeColors.$shadow-color;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+
+  &.closing {
+    animation: slideOut 0.3s ease;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: themeColors.$secondary-shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+
+    &.closing {
+      animation: fadeOut 0.3s ease;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    color: themeColors.$lighter-text;
+  }
+
+  &__close-button {
+    background-color: themeColors.$second-background;
+    color: themeColors.$white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: themeColors.$third-background;
+    }
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}

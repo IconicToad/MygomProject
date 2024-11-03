@@ -1,0 +1,19 @@
+@use "src/styles/Variables.scss" as themeColors;
+
+.cat-message {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: themeColors.$green;
+
+  h3 {
+    font-size: 1.2rem;
+    color: themeColors.$text-color;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100px;
+    border-radius: 8px;
+    border: 2px solid themeColors.$black;
+  }
+}

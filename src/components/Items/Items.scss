@@ -1,0 +1,35 @@
+@use "src/styles/Variables.scss" as themeColors;
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid themeColors.$border-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid themeColors.$secondary-border;
+    border-radius: 5px;
+    background: themeColors.$fourth-background;
+  }
+
+  &__delete-button {
+    background-color: themeColors.$red;
+    color: themeColors.$white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: themeColors.$secondary-red;
+    }
+  }
+}
